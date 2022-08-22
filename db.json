@@ -17,6 +17,12 @@
       "email": "admin@gmail.com",
       "password": "rahasia",
       "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 4
     }
   ]
 }

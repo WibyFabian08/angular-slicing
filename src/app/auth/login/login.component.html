@@ -1,7 +1,7 @@
-<div class="h-full w-full overflow-hidden" style="background-color: #fff1e6">
-  <div class="container mx-auto h-full">
+<div class="w-full h-full overflow-hidden" style="background-color: #fff1e6">
+  <div class="container h-full mx-auto">
     <div class="flex items-center justify-center h-full">
-      <div class="hidden md:block w-0 md:w-3/5">
+      <div class="hidden w-0 md:block md:w-3/5">
         <img src="../../../assets//images/hero.png" alt="" />
         <div class="flex items-center justify-start mt-3">
           <img
@@ -18,14 +18,14 @@
           />
         </div>
       </div>
-      <div class="w-full md:w-2/5 px-10">
-        <div class="bg-white rounded-lg shadow-lg p-10">
-          <h4 class="text-black text-xl font-semibold">Welcome</h4>
+      <div class="w-full px-5 lg:px-10 md:w-2/5">
+        <div class="p-10 bg-white rounded-lg shadow-lg">
+          <h4 class="text-xl font-semibold text-black">Welcome</h4>
           <div>
             <span class="text-xs text-gray-400">to</span>
-            <span class="text-ls text-red-600 font-semibold mx-1">Tesa</span>
+            <span class="mx-1 font-semibold text-red-600 text-ls">Tesa</span>
             <span class="text-xs text-gray-400">by</span>
-            <span class="text-ls text-red-600 font-semibold ml-1">BTS.id</span>
+            <span class="ml-1 font-semibold text-red-600 text-ls">BTS.id</span>
           </div>
           <form
             (ngSubmit)="handleSubmit()"
@@ -33,7 +33,7 @@
             class="flex flex-col mt-5"
           >
             <div>
-              <label for="email" class="text-black text-sm font-semibold mb-2"
+              <label for="email" class="mb-2 text-sm font-semibold text-black"
                 >Email</label
               >
               <div
@@ -49,7 +49,7 @@
                   formControlName="email"
                   id="email"
                   name="email"
-                  class="flex-1 focus:outline-none text-xs text-gray-400 focus:bg-none bg-transparent"
+                  class="flex-1 text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
                   type="text"
                   placeholder="example@email.com"
                 />
@@ -70,7 +70,7 @@
             <div class="mt-5">
               <label
                 for="password"
-                class="text-black font-semibold mb-2 text-sm"
+                class="mb-2 text-sm font-semibold text-black"
                 >Password</label
               >
               <div
@@ -86,7 +86,7 @@
                   formControlName="password"
                   id="password"
                   name="password"
-                  class="flex-1 focus:outline-none text-xs text-gray-400"
+                  class="flex-1 text-xs text-gray-400 focus:outline-none"
                   [type]="isVisible ? 'password' : 'text'"
                   placeholder="Password"
                 />
@@ -110,10 +110,10 @@
               >
                 <p class="text-xs text-red-500">Password cannot be empty</p>
               </div>
-              <div class="w-full flex justify-end">
+              <div class="flex justify-end w-full">
                 <a
                   routerLink="/"
-                  class="text-xs text-red-600 font-semibold mt-2"
+                  class="mt-2 text-xs font-semibold text-red-600"
                 >
                   Forgot Password
                 </a>
@@ -123,12 +123,13 @@
               <button
                 type="submit"
                 [disabled]="!loginForm.valid"
-                class="bg-red-800 hover:bg-red-700 transition-all duration-200 px-4 py-2 rounded-md w-full text-white text-xs"
+                class="w-full px-4 py-2 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
               >
                 {{ isLoading ? "Loading..." : "Sign In" }}
               </button>
               <button
-                class="bg-white border border-gray-200 mt-5 transition-all duration-200 px-4 py-1 rounded-md w-full text-black flex items-center justify-center"
+                type="button"
+                class="flex items-center justify-center w-full px-4 py-1 mt-5 text-black transition-all duration-200 bg-white border border-gray-200 rounded-md"
               >
                 <img
                   src="../../../assets//icons/google.png"
@@ -136,7 +137,7 @@
                   height="24px"
                   alt=""
                 />
-                <p class="text-black text-xs font-semibold ml-2">
+                <p class="ml-2 text-xs font-semibold text-black">
                   Sign In With Googke
                 </p>
               </button>
