@@ -1,1 +1,176 @@
-<p>register works!</p>
+<div class="h-full w-full overflow-hidden" style="background-color: #fff1e6">
+  <div class="container mx-auto h-full">
+    <div class="flex items-center justify-center h-full">
+      <div class="hidden md:block w-0 md:w-3/5">
+        <img src="../../../assets//images/hero.png" alt="" />
+        <div class="flex items-center justify-start mt-3">
+          <img
+            src="../../../assets/icons/icon1.png"
+            width="48px"
+            height="48px"
+            alt=""
+          />
+          <img
+            src="../../../assets/icons/icon2.png"
+            height="40px"
+            width="112px"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-2/5 px-10">
+        <div class="bg-white rounded-lg shadow-lg p-10">
+          <h4 class="text-black text-xl font-semibold">Welcome</h4>
+          <div>
+            <span class="text-xs text-gray-400">to</span>
+            <span class="text-ls text-red-600 font-semibold mx-1">Tesa</span>
+            <span class="text-xs text-gray-400">by</span>
+            <span class="text-ls text-red-600 font-semibold ml-1">BTS.id</span>
+          </div>
+          <form
+            (ngSubmit)="handleSubmit()"
+            [formGroup]="registerForm"
+            class="flex flex-col mt-5"
+          >
+            <div>
+              <label for="name" class="text-black text-sm font-semibold mb-2"
+                >Name</label
+              >
+              <div
+                [ngClass]="
+                  !registerForm.controls.name.valid &&
+                  (registerForm.controls.name.dirty ||
+                    registerForm.controls.name.touched)
+                    ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
+                    : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
+                "
+              >
+                <input
+                  formControlName="name"
+                  id="name"
+                  name="name"
+                  class="flex-1 focus:outline-none text-xs text-gray-400 focus:bg-none bg-transparent"
+                  type="text"
+                  placeholder="Your Name"
+                />
+              </div>
+            </div>
+
+            <div
+              class="mt-1"
+              *ngIf="
+                !registerForm.controls.name?.valid &&
+                (registerForm.controls.name?.dirty ||
+                  registerForm.controls.name?.touched)
+              "
+            >
+              <p class="text-xs text-red-500">Name cannot be empty</p>
+            </div>
+            <div class="mt-5">
+              <label for="email" class="text-black text-sm font-semibold mb-2"
+                >Email</label
+              >
+              <div
+                [ngClass]="
+                  !registerForm.controls.email.valid &&
+                  (registerForm.controls.email.dirty ||
+                    registerForm.controls.email.touched)
+                    ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
+                    : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
+                "
+              >
+                <input
+                  formControlName="email"
+                  id="email"
+                  name="email"
+                  class="flex-1 focus:outline-none text-xs text-gray-400 focus:bg-none bg-transparent"
+                  type="text"
+                  placeholder="example@email.com"
+                />
+              </div>
+            </div>
+
+            <div
+              class="mt-1"
+              *ngIf="
+                !registerForm.controls.email?.valid &&
+                (registerForm.controls.email?.dirty ||
+                  registerForm.controls.email?.touched)
+              "
+            >
+              <p class="text-xs text-red-500">Email cannot be empty</p>
+            </div>
+
+            <div class="mt-5">
+              <label
+                for="password"
+                class="text-black font-semibold mb-2 text-sm"
+                >Password</label
+              >
+              <div
+                [ngClass]="
+                  !registerForm.controls.password.valid &&
+                  (registerForm.controls.password.dirty ||
+                    registerForm.controls.password.touched)
+                    ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
+                    : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
+                "
+              >
+                <input
+                  formControlName="password"
+                  id="password"
+                  name="password"
+                  class="flex-1 focus:outline-none text-xs text-gray-400"
+                  [type]="isVisible ? 'password' : 'text'"
+                  placeholder="Password"
+                />
+                <img
+                  (click)="handleShowPassword()"
+                  [src]="isVisible ? eyeIcon : closeIcon"
+                  height="12px"
+                  width="18px"
+                  alt="eye"
+                  style="cursor: pointer"
+                />
+              </div>
+
+              <div
+                class="mt-1"
+                *ngIf="
+                  !registerForm.controls.password?.valid &&
+                  (registerForm.controls.password?.dirty ||
+                    registerForm.controls.password?.touched)
+                "
+              >
+                <p class="text-xs text-red-500">Password cannot be empty</p>
+              </div>
+            </div>
+            <div class="mt-20">
+              <button
+                type="submit"
+                [disabled]="!registerForm.valid"
+                class="bg-red-800 hover:bg-red-700 transition-all duration-200 px-4 py-2 rounded-md w-full text-white text-xs"
+              >
+                Sign Up
+              </button>
+              <button
+                class="bg-white border border-gray-200 mt-5 transition-all duration-200 px-4 py-1 rounded-md w-full text-black flex items-center justify-center"
+              >
+                <img
+                  src="../../../assets//icons/google.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+                <p class="text-black text-xs font-semibold ml-2">
+                  Sign Up With Googke
+                </p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
