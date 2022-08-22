@@ -11,6 +11,9 @@ export class LoginComponent implements OnInit {
     email: new FormControl("", [Validators.email, Validators.required]),
     password: new FormControl("", [Validators.required]),
   })
+  isVisible: boolean = false
+  eyeIcon: string = "../../../assets//icons/eye.png"
+  closeIcon: string = "../../../assets//icons/hide.png"
 
   constructor() { }
 
@@ -19,6 +22,10 @@ export class LoginComponent implements OnInit {
 
   handleSubmit = () => {
     console.log(this.loginForm.value)
+  }
+
+  handleShowPassword = () => {
+    this.isVisible = !this.isVisible
   }
 
 }

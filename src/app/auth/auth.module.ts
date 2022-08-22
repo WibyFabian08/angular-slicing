@@ -6,11 +6,13 @@ import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AuthComponent
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
