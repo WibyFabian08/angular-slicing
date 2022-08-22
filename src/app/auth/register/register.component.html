@@ -151,7 +151,7 @@
                 [disabled]="!registerForm.valid"
                 class="bg-red-800 hover:bg-red-700 transition-all duration-200 px-4 py-2 rounded-md w-full text-white text-xs"
               >
-                Sign Up
+                {{ isLoading ? "Loading..." : "Sign Up" }}
               </button>
               <button
                 class="bg-white border border-gray-200 mt-5 transition-all duration-200 px-4 py-1 rounded-md w-full text-black flex items-center justify-center"

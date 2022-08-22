@@ -11,6 +11,12 @@
       "name": "William",
       "email": "william@gmail.com",
       "password": "rahasia"
+    },
+    {
+      "name": "Wiby Fabian Rianto",
+      "email": "admin@gmail.com",
+      "password": "rahasia",
+      "id": 3
     }
   ]
 }
