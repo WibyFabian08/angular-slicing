@@ -98,7 +98,7 @@
                   registerForm.controls.email?.touched)
               "
             >
-              <p class="text-xs text-red-500">Email cannot be empty</p>
+              <p class="text-xs text-red-500">Email cannot be empty and must be email</p>
             </div>
 
             <div class="mt-5">
@@ -139,12 +139,21 @@
                 *ngIf="
                   !registerForm.controls.password?.valid &&
                   (registerForm.controls.password?.dirty ||
-                    registerForm.controls.password?.touched)
+                    registerForm.controls.password?.touched) &&
+                  registerForm.get('password')?.hasError('strong')
                 "
               >
-                <p class="text-xs text-red-500">Password cannot be empty</p>
+                <p class="text-xs text-red-500">
+                  Password cannot be empty and must contain Uppercase,
+                  Lowercase, number and symbol
+                </p>
               </div>
             </div>
+            <!-- <div class="mt-1" *ngIf="registerForm.get('password')?.hasError('strong')">
+              <p class="text-xs text-red-500">
+                Password must contain Uppercase, Lowercase, number and symbol
+              </p>
+            </div> -->
             <div class="mt-20">
               <button
                 type="submit"

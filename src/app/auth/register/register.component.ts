@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
 
+export interface ValidationResult {
+  [key: string]: boolean;
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     name: new FormControl("", [Validators.required]),
     email: new FormControl("", [Validators.email, Validators.required]),
-    password: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required, RegisterComponent.strong]),
   })
   isVisible: boolean = true
   eyeIcon: string = "../../../assets//icons/eye.png"
@@ -41,6 +45,19 @@ export class RegisterComponent implements OnInit {
 
   handleShowPassword = () => {
     this.isVisible = !this.isVisible
+  }
+
+  public static strong(control: FormControl): ValidationResult {
+    let hasNumber = /\d/.test(control.value);
+    let hasUpper = /[A-Z]/.test(control.value);
+    let hasLower = /[a-z]/.test(control.value);
+    // console.log('Num, Upp, Low', hasNumber, hasUpper, hasLower);
+    const valid = hasNumber && hasUpper && hasLower;
+    if (!valid) {
+      // return what´s not valid
+      return { strong: true };
+    }
+    return {}
   }
 
 }
