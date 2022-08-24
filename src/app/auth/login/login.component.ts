@@ -23,32 +23,35 @@ export class LoginComponent implements OnInit {
   }
 
   handleSubmit = () => {
-    this.isLoading = true
-    this.authService.login(this.loginForm.value.email)
-      .subscribe({
-        next: (data: any) => {
-          if (data.length > 0) {
-            if (data[0].password === this.loginForm.value.password) {
-              this.isLoading = false
-              // this.loginForm.patchValue({
-              //   email: "",
-              //   password: ""
-              // })
-              alert("Login Sukses")
+    if (this.loginForm.invalid) {
+      Object.keys(this.loginForm.controls).forEach(field => {
+        const control: any = this.loginForm.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
+    } else {
+      this.isLoading = true
+      this.authService.login(this.loginForm.value.email)
+        .subscribe({
+          next: (data: any) => {
+            if (data.length > 0) {
+              if (data[0].password === this.loginForm.value.password) {
+                this.isLoading = false
+                alert("Login Sukses")
+              } else {
+                alert("Password Salah")
+                this.isLoading = false
+              }
             } else {
-              alert("Password Salah")
+              alert("Akun Tidak Ditemukan")
               this.isLoading = false
             }
-          } else {
-            alert("Akun Tidak Ditemukan")
+          },
+          error: (err) => {
+            console.log(err)
             this.isLoading = false
           }
-        },
-        error: (err) => {
-          console.log(err)
-          this.isLoading = false
-        }
-      })
+        })
+    }
   }
 
   handleShowPassword = () => {

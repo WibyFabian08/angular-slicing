@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../interfaces/user';
+import { User } from '../interfaces/userInterface';
 import { Observable } from 'rxjs';
 
 const baseUrl = "http://localhost:3000"

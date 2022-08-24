@@ -23,6 +23,12 @@
       "email": "",
       "password": "",
       "id": 4
+    },
+    {
+      "name": "qwertyui",
+      "email": "qwety@mail.com",
+      "password": "qwe1!E",
+      "id": 5
     }
   ]
 }

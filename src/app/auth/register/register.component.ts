@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
-
-export interface ValidationResult {
-  [key: string]: boolean;
-}
+import { ValidationResult } from '../interfaces/validationInterface';
 
 @Component({
   selector: 'app-register',
@@ -28,19 +25,25 @@ export class RegisterComponent implements OnInit {
   }
 
   handleSubmit = () => {
-    this.isLoading = true
-    this.authService.register(this.registerForm.value)
-      .subscribe({
-        next: (data) => {
-          alert("Register Sukses")
-          this.isLoading = false
-        },
-        error: (err) => {
-          console.log(err)
-          this.isLoading = false
-        }
-      })
-
+    if (this.registerForm.invalid) {
+      Object.keys(this.registerForm.controls).forEach(field => {
+        const control: any = this.registerForm.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
+    } else {
+      this.isLoading = true
+      this.authService.register(this.registerForm.value)
+        .subscribe({
+          next: (data) => {
+            alert("Register Sukses")
+            this.isLoading = false
+          },
+          error: (err) => {
+            console.log(err)
+            this.isLoading = false
+          }
+        })
+    }
   }
 
   handleShowPassword = () => {
@@ -52,10 +55,8 @@ export class RegisterComponent implements OnInit {
     let hasUpper = /[A-Z]/.test(control.value);
     let hasLower = /[a-z]/.test(control.value);
     let hasSymbl = /[?=.*?[#?!@$%^&*-]/.test(control.value)
-    // console.log('Num, Upp, Low', hasNumber, hasUpper, hasLower);
     const valid = hasNumber && hasUpper && hasLower && hasSymbl;
     if (!valid) {
-      // return what´s not valid
       return { strong: true };
     }
     return {}
