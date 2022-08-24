@@ -19,4 +19,8 @@ export class AuthService {
   login(email: any):Observable<User> {
     return this.http.get<User>(`${baseUrl}/users?email=${email}`)
   }
+
+  checkEmail(email: any): Observable<User> {
+    return this.http.get<User>(`${baseUrl}/users?email=${email}`)
+  }
 }

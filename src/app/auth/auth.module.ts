@@ -8,12 +8,14 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgotPasswordPageComponent
   ],
   imports: [
     CommonModule,

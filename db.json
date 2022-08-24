@@ -11,24 +11,6 @@
       "name": "William",
       "email": "william@gmail.com",
       "password": "rahasia"
-    },
-    {
-      "name": "Wiby Fabian Rianto",
-      "email": "admin@gmail.com",
-      "password": "rahasia",
-      "id": 3
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "name": "qwertyui",
-      "email": "qwety@mail.com",
-      "password": "qwe1!E",
-      "id": 5
     }
   ]
 }
