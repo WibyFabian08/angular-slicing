@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
+import { SuccessSendEmailPageComponent } from './success-send-email-page/success-send-email-page.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     AuthComponent,
     RegisterComponent,
-    ForgotPasswordPageComponent
+    ForgotPasswordPageComponent,
+    SuccessSendEmailPageComponent
   ],
   imports: [
     CommonModule,
