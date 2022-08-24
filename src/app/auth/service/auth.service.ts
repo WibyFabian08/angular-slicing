@@ -23,4 +23,12 @@ export class AuthService {
   checkEmail(email: any): Observable<User> {
     return this.http.get<User>(`${baseUrl}/users?email=${email}`)
   }
+
+  updatePassword(data: any, id: any): Observable<User> {
+    return this.http.put<User>(`${baseUrl}/users/${id}`, data)
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('user');
+  }
 }

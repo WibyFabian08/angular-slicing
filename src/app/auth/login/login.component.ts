@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
             if (data.length > 0) {
               if (data[0].password === this.loginForm.value.password) {
                 this.isLoading = false
+                localStorage.setItem("user", JSON.stringify(data[0]))
                 alert("Login Sukses")
               } else {
                 alert("Password Salah")

@@ -17,7 +17,11 @@
     "
   >
     <img
-      src="../../../assets/images/resetIcon.png"
+      [src]="
+        isSuccess
+          ? '../../../assets/images/successReset.png'
+          : '../../../assets/images/resetIcon.png'
+      "
       class="w-full h-full"
       alt=""
     />
@@ -27,16 +31,19 @@
     style="width: 300px; height: 180px"
   >
     <h1 mat-dialog-title class="mt-5 font-semibold text-black text-md">
-      Reset Password?
+      {{ title }}
     </h1>
-    <p class="mt-2 text-sm text-gray-400">Password will be resetted</p>
-    <div class="flex items-center justify-between w-full px-12 mt-5">
+    <p class="mt-2 text-sm text-gray-400">{{ subTitle }}</p>
+    <div
+      *ngIf="!isSuccess"
+      class="flex items-center justify-between w-full px-12 mt-5"
+    >
       <button
         type="button"
         (click)="handleSubmit()"
         class="px-6 py-2 text-white transition-all duration-200 bg-red-800 rounded-md text-md hover:bg-red-700"
       >
-        Reset
+        {{ isLoading ? "Loading..." : "Reset" }}
       </button>
       <button
         type="button"
@@ -44,6 +51,15 @@
         class="flex items-center justify-center px-6 py-2 font-semibold text-black transition-all duration-200 bg-white border border-red-700 rounded-md"
       >
         Cancel
+      </button>
+    </div>
+    <div *ngIf="isSuccess == true" class="flex w-full px-12 mt-5">
+      <button
+        type="button"
+        (click)="back()"
+        class="w-full px-6 py-2 text-white transition-all duration-200 bg-red-800 rounded-md text-md hover:bg-red-700"
+      >
+        Back
       </button>
     </div>
   </div>
