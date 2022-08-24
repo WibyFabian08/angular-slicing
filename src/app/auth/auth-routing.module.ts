@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { SuccessSendEmailPageComponent } from './success-send-email-page/success-send-email-page.component';
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: "confirm",
         component: SuccessSendEmailPageComponent
+      },
+      {
+        path: "reset-password",
+        component: ResetPasswordPageComponent
       },
       {
         path: "",

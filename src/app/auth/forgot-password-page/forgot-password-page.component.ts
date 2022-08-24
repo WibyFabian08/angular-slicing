@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ForgotPasswordPageComponent implements OnInit {
   isLoading: boolean = false
   isMatch: boolean = true
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class ForgotPasswordPageComponent implements OnInit {
           next: (data: any) => {
             if (data.length > 0) {
               this.isMatch = true
+              this.router.navigate(["/auth/confirm"])
             } else {
               this.isMatch = false
             }
