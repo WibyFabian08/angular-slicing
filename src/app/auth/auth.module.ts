@@ -12,6 +12,7 @@ import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-passw
 import { SuccessSendEmailPageComponent } from './success-send-email-page/success-send-email-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
+import { InputTextComponent } from './input-text/input-text.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ModalComponentComponent } from './modal-component/modal-component.compo
     ForgotPasswordPageComponent,
     SuccessSendEmailPageComponent,
     ResetPasswordPageComponent,
-    ModalComponentComponent
+    ModalComponentComponent,
+    InputTextComponent
   ],
   imports: [
     CommonModule,

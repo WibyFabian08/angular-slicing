@@ -1,0 +1,23 @@
+<div>
+  <label for="email" class="mb-2 text-sm font-semibold text-black">Email</label>
+  <div class="flex items-center px-4 py-2 border border-gray-400 rounded-md">
+    <input
+      id="email"
+      name="email"
+      class="flex-1 text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
+      type="text"
+      [placeholder]="placeholderText"
+    />
+  </div>
+</div>
+
+<!-- <div
+              class="mt-1"
+              *ngIf="
+                !loginForm.controls.email?.valid &&
+                (loginForm.controls.email?.dirty ||
+                  loginForm.controls.email?.touched)
+              "
+            >
+              <p class="text-xs text-red-500">Email cannot be empty</p>
+            </div> -->

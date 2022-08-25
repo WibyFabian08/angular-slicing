@@ -10,7 +10,7 @@ import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +18,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     MatSliderModule,
     AuthModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
