@@ -1,0 +1,53 @@
+<div class="w-full">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="handleSubmit()"
+      class="flex flex-col w-full mt-5"
+    >
+      <div>
+        <label for="project" class="mb-2 text-sm font-semibold text-black"
+          >Project</label
+        >
+        <div
+          class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
+        >
+          <input
+            formControlName="project"
+            id="project"
+            name="project"
+            class="flex-1 text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
+            type="text"
+            placeholder="Project Name"
+          />
+        </div>
+      </div>
+  
+      <div class="mt-5">
+        <label for="description" class="mb-2 text-sm font-semibold text-black"
+          >Description</label
+        >
+        <div
+          class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
+        >
+          <input
+            formControlName="description"
+            id="description"
+            name="description"
+            class="flex-1 text-xs text-gray-400 focus:outline-none"
+            type="text"
+            placeholder="Descripton"
+          />
+        </div>
+      </div>
+  
+      <div class="mt-20">
+        <button
+          type="submit"
+          class="w-full px-4 py-2 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
+        >
+          {{ isLoading ? "Loading..." : "Submit" }}
+        </button>
+      </div>
+    </form>
+  </div>
+  
