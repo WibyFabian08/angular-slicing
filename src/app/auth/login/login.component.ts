@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
   closeIcon: string = "../../../assets//icons/hide.png"
   isLoading: boolean = false
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -37,7 +41,7 @@ export class LoginComponent implements OnInit {
               if (data[0].password === this.loginForm.value.password) {
                 this.isLoading = false
                 localStorage.setItem("user", JSON.stringify(data[0]))
-                alert("Login Sukses")
+                this.router.navigate(["/dashboard"])
               } else {
                 alert("Password Salah")
                 this.isLoading = false

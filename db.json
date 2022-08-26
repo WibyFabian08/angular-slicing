@@ -17,20 +17,71 @@
     {
       "project": "Road To Angular",
       "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS",
-      "owner": "Wiby Fabian Rianto",
+      "owner": "William",
       "id": 1
     },
     {
       "project": "React Real Project",
       "description": "React adalah pustaka JavaScript front-end sumber terbuka dan gratis untuk membangun antarmuka pengguna berdasarkan komponen UI. Itu dikelola oleh Meta dan komunitas pengembang individu dan perusahaan.",
-      "owner": "Wiby Fabian Rianto",
+      "owner": "William",
       "id": 2
     },
     {
       "project": "Belajar Vue Js",
       "description": "Vue.js adalah kerangka kerja JavaScript yang bersifat progresif, bersumber terbuka untuk membangun antarmuka pengguna. Integrasi ke dalam proyek yang menggunakan pustaka JavaScript lainnya mudah dilakukan dengan Vue karena ia dirancang untuk bisa berjalan hanya di beberapa bagian halaman web.",
-      "owner": "Wiby Fabian Rianto",
+      "owner": "William",
       "id": 3
+    },
+    {
+      "project": "Belajar Kotlin",
+      "description": "Kotlin adalah sebuah bahasa pemrograman dengan pengetikan statis yang berjalan pada Mesin Virtual Java ataupun menggunakan kompiler LLVM yang dapat pula dikompilasikan kedalam bentuk kode sumber JavaScript.",
+      "owner": "William",
+      "id": 4
+    }
+  ],
+  "checklist": [
+    {
+      "name": "Progress Edit",
+      "item": [
+        {
+          "name": "Todo",
+          "data": [
+            "Get to work",
+            "Pick up groceries",
+            "Go home",
+            "Fall asleep",
+            " "
+          ]
+        },
+        {
+          "name": "Progress",
+          "data": [
+            "up",
+            "off",
+            "on",
+            "at",
+            " "
+          ]
+        },
+        {
+          "name": "Done",
+          "data": [
+            "Get up",
+            "Take a shower",
+            "Brush teeth",
+            "Check e-mail",
+            " "
+          ]
+        },
+        {
+          "name": "Alhamdulillah",
+          "data": [
+            " "
+          ]
+        }
+      ],
+      "id": 1,
+      "boardId": 1
     }
   ]
 }

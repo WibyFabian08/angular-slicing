@@ -1,0 +1,132 @@
+<div class="h-full" style="background-color: #fff1e6">
+  <div class="mx-auto overflow-hidden" style="height: 98vh">
+    <header
+      class="flex items-center justify-between px-5 py-2 bg-white shadow-lg"
+    >
+      <div class="flex items-center">
+        <div class="p-3 bg-white rounded-full eclipse">
+          <img
+            src="../../../assets/icons/icon1.png"
+            width="32px"
+            height="27px"
+            alt=""
+          />
+        </div>
+        <div class="ml-3">
+          <img
+            src="../../../assets/icons/dashboardIcon.png"
+            width="32px"
+            height="27px"
+            alt=""
+          />
+        </div>
+        <p class="ml-3 text-sm font-semibold text-black">Board List</p>
+      </div>
+      <button
+        (click)="openDialog()"
+        class="px-4 py-2 ml-3 text-xs text-white transition-all duration-200 ease-in-out bg-red-700 rounded-md hover:bg-red-600"
+      >
+        Add Checklist
+      </button>
+    </header>
+
+    <div class="flex flex-row h-full">
+      <div class="w-1/12 h-full px-5 pt-5 pb-20">
+        <div
+          class="flex flex-col items-center justify-between w-12 h-full pt-5 bg-red-700 rounded-full"
+        >
+          <div>
+            <img
+              style="cursor: pointer"
+              routerLink="/dashboard/home"
+              src="../../../assets/icons/iconBoard.png"
+              width="30px"
+              height="30px"
+              alt=""
+            />
+          </div>
+
+          <div class="mb-5">
+            <img
+              style="cursor: pointer"
+              routerLink="/auth"
+              src="../../../assets/icons/logout.png"
+              width="40px"
+              height="30px"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="w-11/12 p-5 pb-20">
+        <h2 class="font-semibold text-red-700 text-md">Your Checklist</h2>
+        <div
+          cdkDropListGroup
+          cdkDropList
+          class="flex flex-row w-full mt-3"
+          cdkDropListOrientation="horizontal"
+          (cdkDropListDropped)="dropCheklist($event)"
+        >
+          <div
+            class="max-h-full px-2 mr-3 overflow-hidden bg-white rounded-md shadow-lg"
+            style="width: 200px; cursor: move"
+            *ngFor="let timePeriod of bufferChecklist"
+            cdkDrag
+          >
+            <div class="flex flex-col w-full">
+              <div class="flex items-center justify-between">
+                <p class="pt-5 mb-5 text-sm font-semibold">
+                  {{ timePeriod.name }}
+                </p>
+                <img
+                  [matMenuTriggerFor]="menu"
+                  #menuTrigger
+                  style="cursor: pointer"
+                  src="../../../assets/icons/dot.png"
+                  width="15px"
+                  alt=""
+                />
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="openEditDialog(timePeriod)">
+                    Edit
+                  </button>
+                  <button mat-menu-item (click)="handleDelete(timePeriod)">
+                    Delete
+                  </button>
+                </mat-menu>
+              </div>
+              <div class="flex-1">
+                <div
+                  cdkDropList
+                  [cdkDropListData]="timePeriod.data"
+                  (cdkDropListDropped)="drop($event)"
+                >
+                  <div
+                    style="cursor: move"
+                    class="flex-1"
+                    *ngFor="let item of timePeriod.data"
+                    cdkDrag
+                  >
+                    <div
+                      [ngClass]="
+                        item.length < 2
+                          ? 'bg-white px-4 py-2 shadow-sm mb-2'
+                          : 'w-full px-4 py-2 mb-2 text-sm bg-gray-200 rounded-md'
+                      "
+                    >
+                      {{ item }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-2">
+                <button class="text-sm text-gray-400">+ Add Card</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

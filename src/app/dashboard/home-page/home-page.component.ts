@@ -18,7 +18,8 @@ export class HomePageComponent implements OnInit {
   boards: Board[] = []
   isLoadingFetch: boolean = false
 
-  constructor(public dialog: MatDialog,
+  constructor(
+    public dialog: MatDialog,
     private authService: AuthService,
     private dashboardService: DashboardService
   ) { }

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './material/material.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MaterialModule } from './material/material.module';
     MatSliderModule,
     AuthModule,
     MaterialModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

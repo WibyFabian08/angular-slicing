@@ -1,0 +1,92 @@
+<div class="container mx-auto mt-10">
+  <div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of todo" cdkDrag >
+          <div (click)="handleMove(item)">
+            {{ item }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Progresss</h2>
+  
+        <div
+          cdkDropList
+          [cdkDropListData]="progress"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div class="example-box" *ngFor="let item of progress" cdkDrag>
+            {{ item }}
+          </div>
+        </div>
+      </div>
+
+    <div class="example-container">
+      <h2>Done</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+//
+<div
+          cdkDropListGroup
+          cdkDropList
+          class="outer"
+          cdkDropListOrientation="horizontal"
+          (cdkDropListDropped)="dropCheklist($event)"
+        >
+          <div
+            class="w-64 mr-3 bg-gray-100"
+            *ngFor="let timePeriod of checklist"
+            cdkDrag
+          >
+            <div class="w-full">
+              <p class="pt-5 pl-5 mb-5 font-semibold text-md">
+                {{ timePeriod.name }}
+              </p>
+              <div class="w-full">
+                <div
+                  cdkDropList
+                  [cdkDropListData]="timePeriod.data"
+                  (cdkDropListDropped)="drop($event)"
+                >
+                  <div
+                    class="w-full px-4 py-2 mb-2 bg-gray-200"
+                    *ngFor="let item of timePeriod.data"
+                    cdkDrag
+                  >
+                    {{ item }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

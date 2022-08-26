@@ -1,0 +1,44 @@
+import { Component, OnInit, Input } from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
+@Component({
+  selector: 'app-detail-board-page',
+  templateUrl: './detail-board-page.component.html',
+  styleUrls: ['./detail-board-page.component.css']
+})
+export class DetailBoardPageComponent implements OnInit {
+  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+
+  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+
+  progress = ["up", "on", "at", "off"]
+
+  @Input('cdkDragData') data: any
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+
+    console.log(this.todo)
+    console.log(this.progress)
+    console.log(this.done)
+  }
+
+  handleMove = (data: any) => {
+    console.log(data)
+  }
+
+}
