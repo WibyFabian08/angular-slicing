@@ -46,30 +46,36 @@
         {
           "name": "Todo",
           "data": [
+            "Get up",
             "Get to work",
             "Pick up groceries",
             "Go home",
-            "Fall asleep",
             " "
           ]
         },
         {
           "name": "Done",
           "data": [
-            "off",
+            "Fall asleep",
             "Take a shower",
             "Brush teeth",
-            "at",
+            "Check e-mail",
             " "
           ]
         },
         {
           "name": "Progress",
           "data": [
-            "up",
-            "Get up",
+            "at",
+            "off",
             "on",
-            "Check e-mail",
+            "up",
+            " "
+          ]
+        },
+        {
+          "name": "Success",
+          "data": [
             " "
           ]
         }
@@ -78,15 +84,7 @@
       "boardId": 1
     },
     {
-      "item": [
-        {
-          "name": "Starter",
-          "data": [
-            " ",
-            " "
-          ]
-        }
-      ],
+      "item": [],
       "boardId": 2,
       "id": 2
     }
