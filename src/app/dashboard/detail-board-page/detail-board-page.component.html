@@ -107,6 +107,7 @@
                     class="flex-1"
                     *ngFor="let item of timePeriod.data"
                     cdkDrag
+                    [cdkDragDisabled]="item.length == 1"
                   >
                     <div
                       [ngClass]="

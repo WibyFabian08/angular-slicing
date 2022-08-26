@@ -54,22 +54,24 @@
           ]
         },
         {
-          "name": "Progress",
-          "data": ["up", "off", "on", "at", " "]
-        },
-        {
           "name": "Done",
           "data": [
-            "Get up",
+            "off",
             "Take a shower",
             "Brush teeth",
-            "Check e-mail",
+            "at",
             " "
           ]
         },
         {
-          "name": "Success",
-          "data": [" "]
+          "name": "Progress",
+          "data": [
+            "up",
+            "Get up",
+            "on",
+            "Check e-mail",
+            " "
+          ]
         }
       ],
       "id": 1,
@@ -78,8 +80,11 @@
     {
       "item": [
         {
-          "name": "Hahahaha",
-          "data": [" ", " "]
+          "name": "Starter",
+          "data": [
+            " ",
+            " "
+          ]
         }
       ],
       "boardId": 2,
