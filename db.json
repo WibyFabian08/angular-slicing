@@ -55,13 +55,7 @@
         },
         {
           "name": "Progress",
-          "data": [
-            "up",
-            "off",
-            "on",
-            "at",
-            " "
-          ]
+          "data": ["up", "off", "on", "at", " "]
         },
         {
           "name": "Done",
@@ -74,14 +68,22 @@
           ]
         },
         {
-          "name": "Alhamdulillah",
-          "data": [
-            " "
-          ]
+          "name": "Success",
+          "data": [" "]
         }
       ],
       "id": 1,
       "boardId": 1
+    },
+    {
+      "item": [
+        {
+          "name": "Hahahaha",
+          "data": [" ", " "]
+        }
+      ],
+      "boardId": 2,
+      "id": 2
     }
   ]
 }

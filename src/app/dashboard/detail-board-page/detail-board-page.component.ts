@@ -92,8 +92,10 @@ export class DetailBoardPageComponent implements OnInit {
   getData = () => {
     this.dashboardService.getChecklist(this.boardId).subscribe({
       next: (data: any) => {
-        this.dataChecklist = data[0];
-        this.bufferChecklist = data[0].item;
+        if (data.length > 0) {
+          this.dataChecklist = data[0];
+          this.bufferChecklist = data[0].item;
+        }
       },
       error: (err) => {
         console.log(err);

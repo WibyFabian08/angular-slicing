@@ -33,6 +33,10 @@ export class DashboardService {
     return this.http.get<Checklist>(`${baseUrl}/checklist?boardId=${id}`)
   }
 
+  createChecklist(data: any): Observable<Checklist> {
+    return this.http.post<Checklist>(`${baseUrl}/checklist`, data)
+  }
+
   addCheklist(data: any, id: any): Observable<Checklist> {
     return this.http.put<Checklist>(`${baseUrl}/checklist/${id}`, data)
   }
