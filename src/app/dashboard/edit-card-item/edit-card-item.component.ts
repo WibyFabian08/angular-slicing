@@ -44,7 +44,7 @@ export class EditCardItemComponent implements OnInit {
         next: () => {
           this.isLoading = false
           this.dialogRef.close()
-          window.location.reload()
+          // window.location.reload()
         },
         error: (err) => {
           this.isLoading = false

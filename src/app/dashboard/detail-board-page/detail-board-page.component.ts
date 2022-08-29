@@ -149,7 +149,11 @@ export class DetailBoardPageComponent implements OnInit {
   openDialog() {
     this.dialog.open(AddChecklistComponent, {
       data: this.boardId
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getData()
+      }
+    })
   }
 
   openEditDialog(data: any) {
@@ -158,7 +162,11 @@ export class DetailBoardPageComponent implements OnInit {
         data: data,
         boardId: this.boardId
       }
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getData()
+      }
+    })
   }
 
   openEditCardItemDialog(data: any, parentData: any) {
@@ -168,7 +176,11 @@ export class DetailBoardPageComponent implements OnInit {
         parentData: parentData,
         boardId: this.boardId
       }
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getData()
+      }
+    })
   }
 
   openAddCardDialog(data: any) {
@@ -177,7 +189,11 @@ export class DetailBoardPageComponent implements OnInit {
         boardId: this.boardId,
         data: data.name
       }
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getData()
+      }
+    })
   }
 
   openDetailCardItem(data: any) {
