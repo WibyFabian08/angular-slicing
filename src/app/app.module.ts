@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,23 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './material/material.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {
+  NgxMatErrorsModule,
+  NGX_MAT_ERROR_DEFAULT_OPTIONS,
+  DEFAULT_ERROR_MESSAGES,
+  MinError,
+} from 'ngx-mat-errors';
+
+export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
+  useFactory: () => {
+    return {
+      ...DEFAULT_ERROR_MESSAGES,
+      min: (error: MinError) =>
+        `Min value is ${error.min}, actual is ${error.actual}`,
+    };
+  },
+  provide: NGX_MAT_ERROR_DEFAULT_OPTIONS,
+};
 
 @NgModule({
   declarations: [
@@ -20,9 +37,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatSliderModule,
     AuthModule,
     MaterialModule,
-    DragDropModule
+    DragDropModule,
+    NgxMatErrorsModule
   ],
-  providers: [],
+  providers: [NGX_MAT_ERROR_DEFAULT_CONFIG],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

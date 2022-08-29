@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DashboardService } from '../service/dashboard.service';
 
@@ -8,6 +9,10 @@ import { DashboardService } from '../service/dashboard.service';
   styleUrls: ['./add-card-item.component.css']
 })
 export class AddCardItemComponent implements OnInit {
+  form = new FormGroup({
+    title: new FormControl("", [Validators.required]),
+    description: new FormControl("", [Validators.required])
+  })
   title: string = ""
   description: string = ""
   isLoading: boolean = false
@@ -22,39 +27,46 @@ export class AddCardItemComponent implements OnInit {
   }
 
   handleAdd = () => {
-    this.isLoading = true
-    this.dashboardService.getChecklist(this.data.boardId)
-      .subscribe({
-        next: (data: any) => {
-          let newCard = {
-            title: this.title,
-            description: this.description
-          }
-          let newData = data[0]
-          newData.item.map((item: any) => {
-            if (item.name == this.data.data) {
-              item.data.push(newCard)
+    if (this.form.invalid) {
+      Object.keys(this.form.controls).forEach(field => {
+        const control: any = this.form.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
+    } else {
+      this.isLoading = true
+      this.dashboardService.getChecklist(this.data.boardId)
+        .subscribe({
+          next: (data: any) => {
+            let newCard = {
+              title: this.form.value.title,
+              description: this.form.value.description
             }
-          })
-
-          this.dashboardService.addCardItem(newData, this.data.boardId)
-            .subscribe({
-              next: () => {
-                this.isLoading = false
-                this.dialogRef.close()
-                window.location.reload()
-              }, error: () => {
-                this.isLoading = false
-                this.dialogRef.close()
+            let newData = data[0]
+            newData.item.map((item: any) => {
+              if (item.name == this.data.data) {
+                item.data.push(newCard)
               }
             })
 
-          // console.log(newData)
-        },
-        error: (err) => {
-          console.log(err)
-        }
-      })
+            this.dashboardService.addCardItem(newData, this.data.boardId)
+              .subscribe({
+                next: () => {
+                  this.isLoading = false
+                  this.dialogRef.close()
+                  window.location.reload()
+                }, error: () => {
+                  this.isLoading = false
+                  this.dialogRef.close()
+                }
+              })
+
+            // console.log(newData)
+          },
+          error: (err) => {
+            console.log(err)
+          }
+        })
+    }
   }
 
 }

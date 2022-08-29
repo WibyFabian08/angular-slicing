@@ -9,7 +9,12 @@
         >Project</label
       >
       <div
-        class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
+        [ngClass]="
+          !form.controls.project.valid &&
+          (form.controls.project.dirty || form.controls.project.touched)
+            ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
+            : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
+        "
       >
         <input
           formControlName="project"
@@ -22,12 +27,27 @@
       </div>
     </div>
 
+    <div
+      class="mt-1"
+      *ngIf="
+        !form.controls.project?.valid &&
+        (form.controls.project?.dirty || form.controls.project?.touched)
+      "
+    >
+      <p class="text-xs text-red-500">This field cannot be empty</p>
+    </div>
+
     <div class="mt-5">
       <label for="description" class="mb-2 text-sm font-semibold text-black"
         >Description</label
       >
       <div
-        class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
+        [ngClass]="
+          !form.controls.description.valid &&
+          (form.controls.description.dirty || form.controls.description.touched)
+            ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
+            : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
+        "
       >
         <textarea
           formControlName="description"
@@ -39,6 +59,16 @@
           placeholder="Descripton"
         ></textarea>
       </div>
+    </div>
+
+    <div
+      class="mt-1"
+      *ngIf="
+        !form.controls.description?.valid &&
+        (form.controls.description?.dirty || form.controls.description?.touched)
+      "
+    >
+      <p class="text-xs text-red-500">This field cannot be empty</p>
     </div>
 
     <div class="mt-20">

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
@@ -13,6 +13,23 @@ import { SuccessSendEmailPageComponent } from './success-send-email-page/success
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 import { InputTextComponent } from './input-text/input-text.component';
+import {
+  NgxMatErrorsModule,
+  NGX_MAT_ERROR_DEFAULT_OPTIONS,
+  DEFAULT_ERROR_MESSAGES,
+  MinError,
+} from 'ngx-mat-errors';
+
+export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
+  useFactory: () => {
+    return {
+      ...DEFAULT_ERROR_MESSAGES,
+      min: (error: MinError) =>
+        `Min value is ${error.min}, actual is ${error.actual}`,
+    };
+  },
+  provide: NGX_MAT_ERROR_DEFAULT_OPTIONS,
+};
 
 @NgModule({
   declarations: [
@@ -31,7 +48,9 @@ import { InputTextComponent } from './input-text/input-text.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+    NgxMatErrorsModule
+  ],
+  providers: [NGX_MAT_ERROR_DEFAULT_CONFIG],
 })
 export class AuthModule { }

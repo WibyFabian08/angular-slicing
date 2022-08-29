@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-checklist',
@@ -8,7 +9,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./add-checklist.component.css']
 })
 export class AddChecklistComponent implements OnInit {
-  checklist = ""
+  form = new FormGroup({
+    checklist: new FormControl("", [Validators.required])
+  })
   dataCheklist: any
   isLoading: boolean = false
 
@@ -37,13 +40,17 @@ export class AddChecklistComponent implements OnInit {
   }
 
   handleAdd = () => {
-    if (this.checklist.length < 2) {
-      alert('Fill input form')
+    console.log(this.form.value.checklist)
+    if (this.form.invalid) {
+      Object.keys(this.form.controls).forEach(field => {
+        const control: any = this.form.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
     } else {
       if (this.dataCheklist) {
         this.isLoading = true
         let newCheklist = {
-          name: this.checklist,
+          name: this.form.value.checklist,
           data: [
             {
               title: " ",
@@ -70,7 +77,7 @@ export class AddChecklistComponent implements OnInit {
         this.isLoading = true
         let newCheklist = {
           item: [{
-            name: this.checklist,
+            name: this.form.value.checklist,
             data: [
               {
                 title: " ",
