@@ -237,3 +237,55 @@
   </div>
 </div>
 
+
+// data
+"checklist": [
+    {
+      "name": "Progress Edit",
+      "item": [
+        {
+          "name": "Todo",
+          "data": [
+            {
+              "title": "Get Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
+            "Get up",
+            "Get to work",
+            "Pick up groceries",
+            "Go home",
+            " "
+          ]
+        },
+        {
+          "name": "Done",
+          "data": [
+            "Fall asleep",
+            "Take a shower",
+            "Brush teeth",
+            "Check e-mail",
+            " "
+          ]
+        },
+        {
+          "name": "Progress",
+          "data": [
+            "at",
+            "off",
+            "on",
+            "up",
+            " "
+          ]
+        },
+        {
+          "name": "Success",
+          "data": [
+            " "
+          ]
+        }
+      ],
+      "id": 1,
+      "boardId": 1
+    }
+  ]
+

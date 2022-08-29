@@ -12,6 +12,7 @@ import { DetailBoardPageComponent } from './detail-board-page/detail-board-page.
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddChecklistComponent } from './add-checklist/add-checklist.component';
 import { EditChecklistComponent } from './edit-checklist/edit-checklist.component';
+import { AddCardItemComponent } from './add-card-item/add-card-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditChecklistComponent } from './edit-checklist/edit-checklist.componen
     EditBoardComponent,
     DetailBoardPageComponent,
     AddChecklistComponent,
-    EditChecklistComponent
+    EditChecklistComponent,
+    AddCardItemComponent
   ],
   imports: [
     CommonModule,

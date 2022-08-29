@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Board } from '../interface/board';
 import { Checklist } from '../interface/checklist';
+import { CardItem } from '../interface/card-item';
 
 const baseUrl = "http://localhost:3000"
 
@@ -50,6 +51,10 @@ export class DashboardService {
   }
 
   updateChecklistItemPosition(id: any, data: any): Observable<Checklist> {
+    return this.http.put<Checklist>(`${baseUrl}/checklist/${id}`, data)
+  }
+
+  addCardItem(data: any, id: any): Observable<Checklist> {
     return this.http.put<Checklist>(`${baseUrl}/checklist/${id}`, data)
   }
 

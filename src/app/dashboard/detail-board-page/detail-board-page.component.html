@@ -116,24 +116,28 @@
                   style="cursor: move"
                   *ngFor="let item of timePeriod.data"
                   cdkDrag
-                  [cdkDragDisabled]="item.length == 1"
+                  [cdkDragDisabled]="item.title.length == 1"
                 >
                   <div
                     [ngClass]="
-                      item.length < 2
+                      item.title.length < 2
                         ? 'bg-white px-4 py-2 shadow-sm mb-2'
                         : 'w-full px-4 py-2 mb-2 text-sm bg-gray-200 rounded-md'
                     "
                   >
-                  <p class="text-sm text-gray-600 capitalize">
-                    {{ item }}
-
-                  </p>
+                    <p class="text-sm text-gray-600 capitalize">
+                      {{ item.title }}
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="p-2">
-                <button class="text-sm text-gray-400">+ Add Card</button>
+                <button
+                  (click)="openAddCardDialog(timePeriod)"
+                  class="text-sm text-gray-400"
+                >
+                  + Add Card
+                </button>
               </div>
             </div>
           </div>

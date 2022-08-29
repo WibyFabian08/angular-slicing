@@ -28,23 +28,12 @@ export class AddChecklistComponent implements OnInit {
         next: (data: any) => {
           if (data.length > 0) {
             this.dataCheklist = data[0]
-          } else {
-            // this.dataCheklist = {
-            //   boardId: undefined,
-            //   boardName: '',
-            //   id: 1,
-            //   item: [{}],
-            // };
           }
         },
         error: (err) => {
           console.log(err)
         }
       })
-  }
-
-  createNew = () => {
-
   }
 
   handleAdd = () => {
@@ -55,7 +44,12 @@ export class AddChecklistComponent implements OnInit {
         this.isLoading = true
         let newCheklist = {
           name: this.checklist,
-          data: [" "]
+          data: [
+            {
+              title: " ",
+              description: " "
+            }
+          ]
         }
 
         this.dataCheklist.item.push(newCheklist)
@@ -78,7 +72,10 @@ export class AddChecklistComponent implements OnInit {
           item: [{
             name: this.checklist,
             data: [
-              " "
+              {
+                title: " ",
+                description: " "
+              }
             ]
           },],
           boardId: this.data

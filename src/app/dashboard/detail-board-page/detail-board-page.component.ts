@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DashboardService } from '../service/dashboard.service';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { EditChecklistComponent } from '../edit-checklist/edit-checklist.component';
+import { AddCardItemComponent } from '../add-card-item/add-card-item.component';
 
 @Component({
   selector: 'app-detail-board-page',
@@ -132,6 +133,15 @@ export class DetailBoardPageComponent implements OnInit {
       data: {
         data: data,
         boardId: this.boardId
+      }
+    });
+  }
+
+  openAddCardDialog(data: any) {
+    this.dialog.open(AddCardItemComponent, {
+      data: {
+        boardId: this.boardId,
+        data: data.name
       }
     });
   }

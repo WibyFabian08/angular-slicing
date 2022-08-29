@@ -47,29 +47,12 @@
           "name": "Todo",
           "data": [
             {
-              "title": "Traveling",
-              "description": "Perjalanan adalah pergerakan orang antar lokasi geografi yang jauh. Perjalanan dapat dilakukan dengan kaki, sepeda, mobil, kereta, perahu, bus, pesawat, kapal atau alat lainnya, dengan atau tanpa bagasi. Perjalanan juga dapat meliputi persinggahan yang relatif singkat antar pergerakan berkelanjutan."
-            },
-            {
               "title": "Run",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
-              "title": " ",
-              "description": " "
-            }
-          ]
-        },
-        {
-          "name": "Progress",
-          "data": [
-            {
-              "title": "Laporan",
-              "description": "Membuat Laporan Skripsi"
-            },
-            {
-              "title": "Test Card",
-              "description": "Ini adalah test card"
+              "title": "Get Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
               "title": " ",
@@ -83,14 +66,6 @@
             {
               "title": "Run",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
-            },
-            {
-              "title": "Get Up",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
-            },
-            {
-              "title": "Learning",
-              "description": "Learning Something new"
             },
             {
               "title": "Get Up",
