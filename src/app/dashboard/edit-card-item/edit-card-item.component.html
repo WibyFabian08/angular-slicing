@@ -1,23 +1,18 @@
 <div style="width: 300px">
-  <form
-    [formGroup]="form"
-    (ngSubmit)="handleSubmit()"
-    class="flex flex-col w-full mt-5"
-  >
+  <form class="flex flex-col w-full mt-5">
     <div>
       <label for="project" class="mb-2 text-sm font-semibold text-black"
-        >Project</label
+        >Edit Card Name</label
       >
       <div
         class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
       >
         <input
-          formControlName="project"
-          id="project"
+          [(ngModel)]="data.data.title"
           name="project"
           class="flex-1 text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
           type="text"
-          placeholder="Project Name"
+          placeholder="Card Name"
         />
       </div>
     </div>
@@ -30,9 +25,8 @@
         class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
       >
         <textarea
-          formControlName="description"
+          [(ngModel)]="data.data.description"
           rows="4"
-          id="description"
           name="description"
           class="flex-1 text-xs text-gray-400 focus:outline-none"
           type="text"
@@ -43,10 +37,10 @@
 
     <div class="mt-20">
       <button
-        type="submit"
+        (click)="handleSubmit()"
         class="w-full px-4 py-2 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
       >
-        {{ isLoading ? "Loading..." : "Submit" }}
+        {{isLoading ? "Loading..." : "Update"}}
       </button>
     </div>
   </form>

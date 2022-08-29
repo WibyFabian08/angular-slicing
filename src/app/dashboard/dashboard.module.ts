@@ -13,6 +13,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddChecklistComponent } from './add-checklist/add-checklist.component';
 import { EditChecklistComponent } from './edit-checklist/edit-checklist.component';
 import { AddCardItemComponent } from './add-card-item/add-card-item.component';
+import { EditCardItemComponent } from './edit-card-item/edit-card-item.component';
+import { DetailItemCardComponent } from './detail-item-card/detail-item-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AddCardItemComponent } from './add-card-item/add-card-item.component';
     DetailBoardPageComponent,
     AddChecklistComponent,
     EditChecklistComponent,
-    AddCardItemComponent
+    AddCardItemComponent,
+    EditCardItemComponent,
+    DetailItemCardComponent
   ],
   imports: [
     CommonModule,

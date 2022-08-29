@@ -1,0 +1,119 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Wiby Fabian Rianto",
+        "email": "wibyfabian08@gmail.com",
+        "password": "Rahasia1!"
+      },
+      {
+        "id": 2,
+        "name": "William",
+        "email": "william@gmail.com",
+        "password": "rahasia"
+      }
+    ],
+    "boards": [
+      {
+        "project": "Road To Angular",
+        "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS",
+        "owner": "William",
+        "id": 1
+      },
+      {
+        "project": "React Real Project",
+        "description": "React adalah pustaka JavaScript front-end sumber terbuka dan gratis untuk membangun antarmuka pengguna berdasarkan komponen UI. Itu dikelola oleh Meta dan komunitas pengembang individu dan perusahaan.",
+        "owner": "William",
+        "id": 2
+      },
+      {
+        "project": "Belajar Vue Js",
+        "description": "Vue.js adalah kerangka kerja JavaScript yang bersifat progresif, bersumber terbuka untuk membangun antarmuka pengguna. Integrasi ke dalam proyek yang menggunakan pustaka JavaScript lainnya mudah dilakukan dengan Vue karena ia dirancang untuk bisa berjalan hanya di beberapa bagian halaman web.",
+        "owner": "William",
+        "id": 3
+      },
+      {
+        "project": "Belajar Kotlin",
+        "description": "Kotlin adalah sebuah bahasa pemrograman dengan pengetikan statis yang berjalan pada Mesin Virtual Java ataupun menggunakan kompiler LLVM yang dapat pula dikompilasikan kedalam bentuk kode sumber JavaScript.",
+        "owner": "William",
+        "id": 4
+      }
+    ],
+    "checklist": [
+      {
+        "name": "Progress Edit",
+        "item": [
+          {
+            "name": "Progress",
+            "data": [
+              {
+                "title": "Run",
+                "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              },
+              {
+                "title": "Learning",
+                "description": "Learning Something new"
+              },
+              {
+                "title": "Laporan",
+                "description": "Membuat Laporan Skripsi"
+              },
+              {
+                "title": " ",
+                "description": " "
+              }
+            ]
+          },
+          {
+            "name": "Done",
+            "data": [
+              {
+                "title": "Test",
+                "description": "TEst"
+              },
+              {
+                "title": "Get Up",
+                "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              },
+              {
+                "title": "Get Up",
+                "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              },
+              {
+                "title": " ",
+                "description": " "
+              }
+            ]
+          },
+          {
+            "name": "Todo",
+            "data": [
+              {
+                "title": "Traveling",
+                "description": "Perjalanan adalah pergerakan orang antar lokasi geografi yang jauh. Perjalanan dapat dilakukan dengan kaki, sepeda, mobil, kereta, perahu, bus, pesawat, kapal atau alat lainnya, dengan atau tanpa bagasi. Perjalanan juga dapat meliputi persinggahan yang relatif singkat antar pergerakan berkelanjutan."
+              },
+              {
+                "title": "Run",
+                "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              },
+              {
+                "title": "Hahahaah",
+                "description": "HAhahahahaaah"
+              },
+              {
+                "title": " ",
+                "description": " "
+              }
+            ]
+          }
+        ],
+        "id": 1,
+        "boardId": 1
+      },
+      {
+        "item": [],
+        "boardId": 2,
+        "id": 2
+      }
+    ]
+  }

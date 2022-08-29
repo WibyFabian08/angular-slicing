@@ -34,10 +34,37 @@
     </header>
 
     <div
+      class="flex flex-row justify-between block w-full p-5 overflow-x-auto overflow-y-hidden bg-red-700 lg:hidden flex-nowrap"
+      style="-webkit-overflow-scrolling: touch"
+    >
+      <div>
+        <img
+          style="cursor: pointer"
+          routerLink="/dashboard/home"
+          src="../../../assets/icons/iconBoard.png"
+          width="30px"
+          height="30px"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          style="cursor: pointer"
+          routerLink="/auth"
+          src="../../../assets/icons/logout.png"
+          width="40px"
+          height="30px"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div
       class="flex flex-row h-full overflow-x-auto overflow-y-hidden flex-nowrap"
       style="-webkit-overflow-scrolling: touch"
     >
-      <div class="w-1/12 h-full px-5 pt-5 pb-20">
+      <div class="hidden w-1/12 h-full px-5 pt-5 pb-20 lg:block">
         <div
           class="flex flex-col items-center justify-between w-12 h-full pt-5 bg-red-700 rounded-full"
         >
@@ -65,7 +92,7 @@
         </div>
       </div>
 
-      <div class="h-full pb-20 mt-5">
+      <div class="h-full pb-20 mx-5 mt-5 md:mx-0">
         <h2 class="font-semibold text-red-700 text-md">Your Checklist</h2>
         <div
           cdkDropListGroup
@@ -113,7 +140,7 @@
                 (cdkDropListDropped)="drop($event)"
               >
                 <div
-                  style="cursor: move"
+                  style="cursor: pointer"
                   *ngFor="let item of timePeriod.data"
                   cdkDrag
                   [cdkDragDisabled]="item.title.length == 1"
@@ -121,13 +148,42 @@
                   <div
                     [ngClass]="
                       item.title.length < 2
-                        ? 'bg-white px-4 py-2 shadow-sm mb-2'
-                        : 'w-full px-4 py-2 mb-2 text-sm bg-gray-200 rounded-md'
+                        ? 'bg-white px-4 py-1 shadow-sm mb-1'
+                        : 'w-full px-4 py-2 mb-2 text-sm bg-gray-200 rounded-sm flex items-center justify-between'
                     "
                   >
                     <p class="text-sm text-gray-600 capitalize">
                       {{ item.title }}
                     </p>
+                    <img
+                      [matMenuTriggerFor]="menuCard"
+                      #menuTrigger
+                      *ngIf="item.title.length > 2"
+                      style="cursor: pointer"
+                      src="../../../assets/icons/dot.png"
+                      width="15px"
+                      alt=""
+                    />
+                    <mat-menu #menuCard="matMenu">
+                      <button
+                        mat-menu-item
+                        (click)="openDetailCardItem(item)"
+                      >
+                        Detail Card
+                      </button>
+                      <button
+                        mat-menu-item
+                        (click)="openEditCardItemDialog(item, timePeriod)"
+                      >
+                        Edit Card
+                      </button>
+                      <button
+                        mat-menu-item
+                        (click)="handleDeleteCard(timePeriod, item)"
+                      >
+                        Delete Card
+                      </button>
+                    </mat-menu>
                   </div>
                 </div>
               </div>

@@ -11,6 +11,8 @@ import { DashboardService } from '../service/dashboard.service';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { EditChecklistComponent } from '../edit-checklist/edit-checklist.component';
 import { AddCardItemComponent } from '../add-card-item/add-card-item.component';
+import { EditCardItemComponent } from '../edit-card-item/edit-card-item.component';
+import { DetailItemCardComponent } from '../detail-item-card/detail-item-card.component';
 
 @Component({
   selector: 'app-detail-board-page',
@@ -122,6 +124,28 @@ export class DetailBoardPageComponent implements OnInit {
       })
   };
 
+  handleDeleteCard = (data: any, item: any) => {
+    let findData = data.data.filter((value: any) => {
+      return value.title !== item.title
+    })
+
+    this.dataChecklist.item.filter((item: any) => {
+      if (item.name === data.name) {
+        item.data = findData
+      }
+    })
+
+    this.dashboardService.deleteCheklist(this.dataChecklist, this.boardId)
+      .subscribe({
+        next: () => {
+          this.getData()
+        },
+        error: (err) => {
+          console.log(err)
+        }
+      })
+  }
+
   openDialog() {
     this.dialog.open(AddChecklistComponent, {
       data: this.boardId
@@ -137,12 +161,28 @@ export class DetailBoardPageComponent implements OnInit {
     });
   }
 
+  openEditCardItemDialog(data: any, parentData: any) {
+    this.dialog.open(EditCardItemComponent, {
+      data: {
+        data: data,
+        parentData: parentData,
+        boardId: this.boardId
+      }
+    });
+  }
+
   openAddCardDialog(data: any) {
     this.dialog.open(AddCardItemComponent, {
       data: {
         boardId: this.boardId,
         data: data.name
       }
+    });
+  }
+
+  openDetailCardItem(data: any) {
+    this.dialog.open(DetailItemCardComponent, {
+      data: data
     });
   }
 }
