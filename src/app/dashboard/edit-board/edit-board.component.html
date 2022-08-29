@@ -1,4 +1,4 @@
-<div class="w-full">
+<div style="width: 300px">
     <form
       [formGroup]="form"
       (ngSubmit)="handleSubmit()"
@@ -29,14 +29,15 @@
         <div
           class="flex items-center px-4 py-2 border border-gray-400 rounded-md"
         >
-          <input
+          <textarea
+            rows="4"
             formControlName="description"
             id="description"
             name="description"
             class="flex-1 text-xs text-gray-400 focus:outline-none"
             type="text"
             placeholder="Descripton"
-          />
+          ></textarea>
         </div>
       </div>
   
