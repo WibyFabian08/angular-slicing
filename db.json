@@ -39,7 +39,7 @@
       "id": 4
     },
     {
-      "project": "Persib",
+      "project": "Persib Elehan",
       "description": "Persib adalah klub sepak bola Indonesia yang berdiri pada 14 Maret 1933, berbasis di Bandung, Jawa Barat. Persib saat ini bermain di Liga 1 Indonesia. Julukan mereka adalah Maung Bandung dan Pangeran Biru.",
       "owner": "William",
       "id": 5
@@ -49,6 +49,27 @@
     {
       "name": "Progress Edit",
       "item": [
+        {
+          "name": "Todo",
+          "data": [
+            {
+              "title": "Laporan",
+              "description": "Membuat Laporan Skripsi"
+            },
+            {
+              "title": "snorkeling",
+              "description": "Selam permukaan adalah kegiatan berenang atau menyelam dengan mengenakan peralatan berupa masker selam dan snorkel. Selain itu, penyelam sering mengenakan alat bantu gerak berupa kaki katak untuk menambah daya dorong pada kaki."
+            },
+            {
+              "title": "Get Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
+            {
+              "title": " ",
+              "description": " "
+            }
+          ]
+        },
         {
           "name": "Progress",
           "data": [
@@ -83,27 +104,6 @@
             },
             {
               "title": "Hurry Up",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
-            },
-            {
-              "title": " ",
-              "description": " "
-            }
-          ]
-        },
-        {
-          "name": "Todo",
-          "data": [
-            {
-              "title": "Laporan",
-              "description": "Membuat Laporan Skripsi"
-            },
-            {
-              "title": "snorkeling",
-              "description": "Selam permukaan adalah kegiatan berenang atau menyelam dengan mengenakan peralatan berupa masker selam dan snorkel. Selain itu, penyelam sering mengenakan alat bantu gerak berupa kaki katak untuk menambah daya dorong pada kaki."
-            },
-            {
-              "title": "Get Up",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {

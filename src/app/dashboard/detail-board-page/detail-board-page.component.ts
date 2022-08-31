@@ -63,6 +63,17 @@ export class DetailBoardPageComponent implements OnInit {
       event.previousIndex,
       event.currentIndex
     );
+
+    this.dataChecklist.item = this.bufferChecklist;
+
+    this.dashboardService
+      .updateChecklistItemPosition(this.boardId, this.dataChecklist)
+      .subscribe({
+        next: () => { },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 
   drop(event: CdkDragDrop<string[]>) {
