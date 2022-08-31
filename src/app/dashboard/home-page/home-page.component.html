@@ -32,7 +32,7 @@
     </header>
 
     <div class="flex flex-row h-full">
-      <div class="hidden w-1/5 h-full px-5 pt-5 pb-20 lg:block md:w-1/12">
+      <div class="w-1/5 h-full px-5 pt-5 pb-20 md:w-1/12">
         <div
           class="flex flex-col items-center justify-between w-12 h-full pt-5 bg-red-700 rounded-full"
         >
@@ -49,6 +49,7 @@
 
           <div class="mb-5">
             <img
+              routerLink="/auth"
               class="border border-white rounded-full"
               width="30px"
               height="30px"
@@ -69,10 +70,13 @@
 
       <div class="w-4/5 p-5 pb-20 overflow-y-auto md:w-11/12">
         <div class="flex flex-row flex-wrap -mx-2">
-          <div class="w-full p-2 md:w-1/3 lg:w-1/5" *ngFor="let board of boards">
+          <div
+            class="w-full p-2 md:w-1/3 lg:w-1/5"
+            *ngFor="let board of boards"
+          >
             <div
               class="flex flex-col p-2 transition-all duration-200 ease-in-out bg-white rounded-m board-item"
-              style="border: 1px solid #E9E9E9;"
+              style="border: 1px solid #e9e9e9"
             >
               <div class="flex items-center justify-between">
                 <div
@@ -112,7 +116,11 @@
                   {{ board.owner }}
                 </div>
                 <div>
-                  <img src="../../../assets/icons/profile.png" alt="" />
+                  <img
+                    routerLink="/auth"
+                    src="../../../assets/icons/profile.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
