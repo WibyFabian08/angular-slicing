@@ -43,6 +43,12 @@
       "description": "Persib adalah klub sepak bola Indonesia yang berdiri pada 14 Maret 1933, berbasis di Bandung, Jawa Barat. Persib saat ini bermain di Liga 1 Indonesia. Julukan mereka adalah Maung Bandung dan Pangeran Biru.",
       "owner": "William",
       "id": 5
+    },
+    {
+      "project": "New tast",
+      "description": "Hahah",
+      "owner": "William",
+      "id": 6
     }
   ],
   "checklist": [
@@ -61,12 +67,16 @@
               "description": "Selam permukaan adalah kegiatan berenang atau menyelam dengan mengenakan peralatan berupa masker selam dan snorkel. Selain itu, penyelam sering mengenakan alat bantu gerak berupa kaki katak untuk menambah daya dorong pada kaki."
             },
             {
-              "title": "Get Up",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              "title": "New",
+              "description": "New"
             },
             {
               "title": " ",
               "description": " "
+            },
+            {
+              "title": "Lagi",
+              "description": "Lagi"
             }
           ]
         },
@@ -78,12 +88,12 @@
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
-              "title": "Traveling",
-              "description": "Perjalanan adalah pergerakan orang antar lokasi geografi yang jauh. Perjalanan dapat dilakukan dengan kaki, sepeda, mobil, kereta, perahu, bus, pesawat, kapal atau alat lainnya, dengan atau tanpa bagasi. Perjalanan juga dapat meliputi persinggahan yang relatif singkat antar pergerakan berkelanjutan."
+              "title": "Get Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
-              "title": "Learning",
-              "description": "Learning Something new"
+              "title": "Traveling",
+              "description": "Perjalanan adalah pergerakan orang antar lokasi geografi yang jauh. Perjalanan dapat dilakukan dengan kaki, sepeda, mobil, kereta, perahu, bus, pesawat, kapal atau alat lainnya, dengan atau tanpa bagasi. Perjalanan juga dapat meliputi persinggahan yang relatif singkat antar pergerakan berkelanjutan."
             },
             {
               "title": " ",
@@ -95,15 +105,19 @@
           "name": "Done",
           "data": [
             {
+              "title": "Hurry Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
+            {
               "title": "Run",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
-              "title": "Angular",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+              "title": "Learning",
+              "description": "Learning Something new"
             },
             {
-              "title": "Hurry Up",
+              "title": "Angular",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { DashboardService } from '../service/dashboard.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -11,8 +11,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EditBoardComponent implements OnInit {
   form = new FormGroup({
-    project: new FormControl(""),
-    description: new FormControl(""),
+    project: new FormControl("", [Validators.required]),
+    description: new FormControl("", [Validators.required]),
     owner: new FormControl("")
   })
   isLoading: boolean = false
@@ -39,20 +39,27 @@ export class EditBoardComponent implements OnInit {
   }
 
   handleSubmit = () => {
-    this.isLoading = true
-    this.dashboardService.updateBoard(this.form.value, this.data.id)
-      .subscribe({
-        next: (data) => {
-          this.isLoading = false
-          // window.location.reload()
-          this.dialogRef.close()
-        },
-        error: (err) => {
-          console.log(err)
-          this.dialogRef.close()
-          this.isLoading = false
-        }
-      })
+    if (this.form.invalid) {
+      Object.keys(this.form.controls).forEach(field => {
+        const control: any = this.form.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
+    } else {
+      this.isLoading = true
+      this.dashboardService.updateBoard(this.form.value, this.data.id)
+        .subscribe({
+          next: (data) => {
+            this.isLoading = false
+            // window.location.reload()
+            this.dialogRef.close()
+          },
+          error: (err) => {
+            console.log(err)
+            this.dialogRef.close()
+            this.isLoading = false
+          }
+        })
+    }
   }
 
 }

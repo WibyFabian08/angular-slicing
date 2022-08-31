@@ -40,7 +40,6 @@ export class AddChecklistComponent implements OnInit {
   }
 
   handleAdd = () => {
-    console.log(this.form.value.checklist)
     if (this.form.invalid) {
       Object.keys(this.form.controls).forEach(field => {
         const control: any = this.form.get(field);

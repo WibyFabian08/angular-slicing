@@ -1,4 +1,4 @@
-<div style="width: 300px">
+<div style="width: 300px overflow-hidden">
   <form
     [formGroup]="form"
     (ngSubmit)="handleAdd()"
@@ -8,65 +8,29 @@
       <label for="project" class="mb-2 text-sm font-semibold text-black"
         >Card Name</label
       >
-      <div
-        [ngClass]="
-          !form.controls.title.valid &&
-          (form.controls.title.dirty || form.controls.title.touched)
-            ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
-            : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
-        "
-      >
+      <mat-form-field floatLabel="never" class="example-full-width">
         <input
-          formControlName="title"
-          name="project"
-          class="flex-1 text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
+          matInput
           type="text"
-          placeholder="Card Name"
+          formControlName="title"
+          placeholder="Input Title"
         />
-      </div>
-    </div>
-
-    <div
-      class="mt-1"
-      *ngIf="
-        !form.controls.title?.valid &&
-        (form.controls.title?.dirty || form.controls.title?.touched)
-      "
-    >
-      <p class="text-xs text-red-500">This field cannot be empty</p>
+        <mat-error ngx-mat-errors> </mat-error>
+      </mat-form-field>
     </div>
 
     <div class="mt-5">
       <label for="description" class="mb-2 text-sm font-semibold text-black"
         >Description</label
       >
-      <div
-        [ngClass]="
-          !form.controls.description.valid &&
-          (form.controls.description.dirty || form.controls.description.touched)
-            ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
-            : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
-        "
-      >
+      <mat-form-field floatLabel="never" class="example-full-width">
         <textarea
-          rows="4"
+          matInput
           formControlName="description"
-          name="description"
-          class="flex-1 text-xs text-gray-400 focus:outline-none"
-          type="text"
-          placeholder="Descripton"
+          placeholder="Description"
         ></textarea>
-      </div>
-    </div>
-
-    <div
-      class="mt-1"
-      *ngIf="
-        !form.controls.description?.valid &&
-        (form.controls.description?.dirty || form.controls.description?.touched)
-      "
-    >
-      <p class="text-xs text-red-500">This field cannot be empty</p>
+        <mat-error ngx-mat-errors> </mat-error>
+      </mat-form-field>
     </div>
 
     <div class="mt-20">

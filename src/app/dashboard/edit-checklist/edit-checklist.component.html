@@ -1,20 +1,29 @@
-<h3 class="text-lg font-semibold text-black">Edit Cheklist</h3>
-<div
-  class="flex items-center px-4 py-2 mt-3 border border-gray-400 rounded-md w-52"
->
-  <input
-    [(ngModel)]="editForm"
-    name="editForm"
-    class="flex-1 w-full text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
-    type="text"
-    placeholder="Checklist Name"
-  />
-</div>
-<div>
-  <button
-    (click)="handleEdit()"
-    class="w-full px-4 py-2 mt-3 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
+<div class="p-5 bg-white" style="width: 300px">
+  <h3 class="text-lg font-semibold text-black">Edit Cheklist</h3>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="handleEdit()"
+    class="example-form"
+    novalidate
   >
-    {{ isLoading ? "Loading..." : "Edit" }}
-  </button>
+    <mat-form-field floatLabel="never" class="example-full-width">
+      <input
+        matInput
+        type="text"
+        formControlName="editForm"
+        placeholder="Cheklist Name"
+        autocomplete="off"
+      />
+      <mat-error ngx-mat-errors> </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button
+        type="submit"
+        class="w-full px-4 py-2 mt-3 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
+      >
+        {{ isLoading ? "Loading..." : "Edit" }}
+      </button>
+    </div>
+  </form>
 </div>

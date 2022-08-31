@@ -1,3 +1,15 @@
 .eclipse {
     box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.12);
 }
+
+.board-name {
+    background-color: #FB8267;
+}
+
+.board-item {
+    border-radius: 10px;
+}
+
+.board-item:hover {
+    background-color: #FFDADA;
+}

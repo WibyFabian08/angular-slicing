@@ -159,7 +159,8 @@ export class DetailBoardPageComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AddChecklistComponent, {
-      data: this.boardId
+      data: this.boardId,
+      panelClass: 'custom-dialog'
     }).afterClosed().subscribe({
       next: () => {
         this.getData()

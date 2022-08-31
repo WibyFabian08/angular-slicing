@@ -13,6 +13,9 @@ import { SuccessSendEmailPageComponent } from './success-send-email-page/success
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 import { InputTextComponent } from './input-text/input-text.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import {
   NgxMatErrorsModule,
   NGX_MAT_ERROR_DEFAULT_OPTIONS,
@@ -49,7 +52,10 @@ export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxMatErrorsModule
+    NgxMatErrorsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [NGX_MAT_ERROR_DEFAULT_CONFIG],
 })

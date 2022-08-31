@@ -1,37 +1,29 @@
-<h3 class="text-lg font-semibold text-black">Add Cheklist</h3>
-<form [formGroup]="form" (ngSubmit)="handleAdd()">
-  <div
-    [ngClass]="
-      !form.controls.checklist.valid &&
-      (form.controls.checklist.dirty || form.controls.checklist.touched)
-        ? 'flex items-center border border-red-400 rounded-md px-4 py-2'
-        : 'flex items-center border border-gray-400 rounded-md px-4 py-2'
-    "
+<div class="p-5 bg-white" style="width: 300px">
+  <h3 class="text-lg font-semibold text-black">Add Cheklist</h3>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="handleAdd()"
+    class="example-form"
+    novalidate
   >
-    <input
-      formControlName="checklist"
-      name="email"
-      class="flex-1 w-full text-xs text-gray-400 bg-transparent focus:outline-none focus:bg-none"
-      type="text"
-      placeholder="Checklist Name"
-    />
-  </div>
+    <mat-form-field floatLabel="never" class="example-full-width">
+      <input
+        matInput
+        type="text"
+        formControlName="checklist"
+        placeholder="Cheklist Name"
+        autocomplete="off"
+      />
+      <mat-error ngx-mat-errors> </mat-error>
+    </mat-form-field>
 
-  <div
-    class="mt-1"
-    *ngIf="
-      !form.controls.checklist?.valid &&
-      (form.controls.checklist?.dirty || form.controls.checklist?.touched)
-    "
-  >
-    <p class="text-xs text-red-500">This field cannot be empty</p>
-  </div>
-  <div>
-    <button
-      type="submit"
-      class="w-full px-4 py-2 mt-3 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
-    >
-      {{ isLoading ? "Loading..." : "Add" }}
-    </button>
-  </div>
-</form>
+    <div>
+      <button
+        type="submit"
+        class="w-full px-4 py-2 mt-3 text-xs text-white transition-all duration-200 bg-red-800 rounded-md hover:bg-red-700"
+      >
+        {{ isLoading ? "Loading..." : "Add" }}
+      </button>
+    </div>
+  </form>
+</div>
