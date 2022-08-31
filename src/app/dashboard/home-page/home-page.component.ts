@@ -17,6 +17,7 @@ export class HomePageComponent implements OnInit {
 
   boards: Board[] = []
   isLoadingFetch: boolean = false
+  obj: any | undefined
 
   constructor(
     public dialog: MatDialog,
@@ -26,17 +27,20 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     let data: any = this.authService.getToken()
-    let obj = JSON.parse(data)
+    this.obj = JSON.parse(data)
 
+    this.getBoards(this.obj.name)
+  }
+
+  getBoards = (name: any) => {
     this.isLoadingFetch = true
-    this.dashboardService.getBoards(obj.name)
+    this.dashboardService.getBoards(name)
       .subscribe({
         next: (data: any) => {
           this.boards = data
           this.isLoadingFetch = false
         },
         error: (err) => {
-          console.log(data)
           this.isLoadingFetch = false
         }
       })
@@ -44,13 +48,21 @@ export class HomePageComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AddBoardComponent, {
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getBoards(this.obj.name)
+      }
+    })
   }
 
   openEditDialog(data: any) {
     this.dialog.open(EditBoardComponent, {
       data: data
-    });
+    }).afterClosed().subscribe({
+      next: () => {
+        this.getBoards(this.obj.name)
+      }
+    })
   }
 
   deleteBoard = (id: any) => {

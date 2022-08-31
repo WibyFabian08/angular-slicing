@@ -44,7 +44,7 @@ export class EditBoardComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.isLoading = false
-          window.location.reload()
+          // window.location.reload()
           this.dialogRef.close()
         },
         error: (err) => {
