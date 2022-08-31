@@ -39,16 +39,10 @@
       "id": 4
     },
     {
-      "project": "Persib Elehan",
+      "project": "Persib",
       "description": "Persib adalah klub sepak bola Indonesia yang berdiri pada 14 Maret 1933, berbasis di Bandung, Jawa Barat. Persib saat ini bermain di Liga 1 Indonesia. Julukan mereka adalah Maung Bandung dan Pangeran Biru.",
       "owner": "William",
       "id": 5
-    },
-    {
-      "project": "New tast",
-      "description": "Hahah",
-      "owner": "William",
-      "id": 6
     }
   ],
   "checklist": [
@@ -81,8 +75,33 @@
           ]
         },
         {
+          "name": "Done",
+          "data": [
+            {
+              "title": "Hurry Up",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
+            {
+              "title": "Learning",
+              "description": "Learning Something new"
+            },
+            {
+              "title": "Angular",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
+            {
+              "title": " ",
+              "description": " "
+            }
+          ]
+        },
+        {
           "name": "Progress",
           "data": [
+            {
+              "title": "Run",
+              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
+            },
             {
               "title": "Run",
               "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
@@ -94,31 +113,6 @@
             {
               "title": "Traveling",
               "description": "Perjalanan adalah pergerakan orang antar lokasi geografi yang jauh. Perjalanan dapat dilakukan dengan kaki, sepeda, mobil, kereta, perahu, bus, pesawat, kapal atau alat lainnya, dengan atau tanpa bagasi. Perjalanan juga dapat meliputi persinggahan yang relatif singkat antar pergerakan berkelanjutan."
-            },
-            {
-              "title": " ",
-              "description": " "
-            }
-          ]
-        },
-        {
-          "name": "Done",
-          "data": [
-            {
-              "title": "Hurry Up",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
-            },
-            {
-              "title": "Run",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
-            },
-            {
-              "title": "Learning",
-              "description": "Learning Something new"
-            },
-            {
-              "title": "Angular",
-              "description": "Angular adalah kerangka kerja aplikasi web sumber terbuka dan gratis berbasis TypeScript yang dipimpin oleh Tim Angular di Google dan oleh komunitas individu dan perusahaan. Angular adalah penulisan ulang lengkap dari tim yang sama yang membangun AngularJS"
             },
             {
               "title": " ",
